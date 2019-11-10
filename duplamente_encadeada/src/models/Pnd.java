@@ -11,7 +11,7 @@ public class Pnd {
 		this.criacaoPnd();
 		this.cria_nc();
 	}
-	
+
 	public Nodo[] getLista() {
 		return lista;
 	}
@@ -47,7 +47,7 @@ public class Pnd {
 				if (valor == lista[indice].getInfo()) break;
 				indice = lista[indice].getElo_p();
 			}
-			if (indice == nc) throw new RuntimeException("Valor não encontrado");
+			if (indice == nc) throw new RuntimeException("Valor nï¿½o encontrado");
 			else {
 				lista[lista[indice].getElo_a()].setElo_p(lista[indice].getElo_p());
 				lista[lista[indice].getElo_p()].setElo_a(lista[indice].getElo_a());
@@ -58,7 +58,7 @@ public class Pnd {
 	}
 
 	private void libera(int indice) {
-		lista[ indice ].setElo_p(disp);
+		lista[indice].setElo_p(disp);
 		disp = indice;
 
 	}
@@ -84,11 +84,38 @@ public class Pnd {
 	private void criacaoPnd() {
 		int i = 0;
 		while (i < TAMANHO - 1) {
-			lista[ i ].setElo_p(i+1);
+			lista[i] = new Nodo(i + 1);
 			i++;
 		}
-		lista[TAMANHO - 1].setElo_p(-1);
+		lista[TAMANHO - 1] = new Nodo(-1);
 		disp = 0;
 
 	}
+
+	public StringBuilder saida() {
+		StringBuilder saida = new StringBuilder("");
+		for (Nodo nodo : lista) {
+			saida.append(nodo.toString() + "\n");
+		}
+		return saida;
+	}
+
+	public int maiorElemento() {
+		return lista[lista[nc].getElo_a()].getInfo();
+	}
+
+	public int menorElemento() {
+		return lista[lista[nc].getElo_p()].getInfo();
+	}
+
+	public float media() {
+		int soma = 0;
+		for (Nodo nodo : lista) {
+			soma += nodo.getInfo();
+		}
+		return (float) soma / (TAMANHO-1);
+	}
+
 }
+
+

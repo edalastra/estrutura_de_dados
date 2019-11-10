@@ -8,7 +8,7 @@ public class App {
 	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		
+		estrutura_de_dados
 		System.out.print("Digite o tamanho da lista: ");
 		int tam = input.nextInt();
 		try {
@@ -19,7 +19,7 @@ public class App {
 		int sair = 0;
 		
 		while(sair == 0) {
-			System.out.println("Você deseja: ");
+			System.out.println("Vocï¿½ deseja: ");
 			System.out.println("    Inserir um elemento na lista - 1");
 			System.out.println("    Retirar um elemento na lista - 2");
 			System.out.println("    Finalizar o programa - 3");
@@ -44,7 +44,7 @@ public class App {
 				break;
 			default:
 	
-				System.out.println("Opção inválida. Digite novamente");
+				System.out.println("Opï¿½ï¿½o invï¿½lida. Digite novamente");
 			}
 		}
 		
